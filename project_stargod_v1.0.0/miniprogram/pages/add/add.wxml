@@ -1,0 +1,60 @@
+<!--pages/add/add.wxml-->
+<form bindsubmit='formSubmit'>
+  <view class="m_center">
+    <text>#点击任一照片，可编辑打印区域和张数#</text>
+  </view>
+
+  <view class="m_albums">
+    <view class="m_message">
+      <view class="m_text">
+        <textarea class="m_text_1" name="remark" maxlength="50" placeholder="填写备注（可以不写）" placeholder-style='color:#ccc'/>
+      </view>
+    </view>
+    <block wx:for="{{photosNew}}" wx:for-item="image" wx:for-index="idx" wx:key="{{idx}}">
+      <view class="m_album {{idx%2==0?'m_album-left':'m_album-right'}}" style="height:{{imageH}}rpx;width:{{imageW}}rpx">
+        <block wx:if="{{image.type==0}}">
+          <image 
+            style="height:{{imageH}}rpx;width:{{imageW}}rpx"
+            data-src="{{image}}" 
+            src="{{image.src}}" 
+            mode="aspectFill" 
+            bindtap="previewImage"
+            bindlongpress="deleteImage">
+          </image>
+        </block>
+        <block wx:else>
+          <image 
+            style="height:{{imageW}}rpx;width:{{imageH}}rpx;transform:rotate(90deg) translateY(-{{imageW}}rpx);transform-origin:0 0;"
+            data-src="{{image}}" 
+            src="{{image.src}}" 
+            mode="aspectFill" 
+            bindtap="previewImage"
+            bindlongpress="deleteImage">
+          </image>
+        </block>
+        <block wx:if="{{image.isOrigin}}">
+          <view class="m_warning">
+            #原图有点小哦#
+          </view>
+        </block>
+      </view>
+    </block>
+    <view class="m_space"></view>
+  </view>
+
+  <view class="m_bottom-type">
+    <view class="m_bottom-style">
+      <view class="m_bottom">
+        <view class="m_bottom-text-left" bindtap="doUpload">
+          继续添加
+        </view>
+        <view class="m_bottom-text-right">
+          已选{{photosNew.length}}张
+        </view>
+      </view>
+      <button class="m_bottom-button" form-type="submit" bindtap="gotoBook">
+        下一步
+      </button>
+    </view>
+  </view>
+</form>

@@ -1,0 +1,117 @@
+/* pages/cache/cache.wxss */
+
+.m_albums {
+  margin:auto;
+  width:92%;
+  font-size:0rpx;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.m_albums .m_album {
+  margin-bottom: 25rpx;
+  background: #eeeeee;
+  position: relative;
+}
+
+.m_album-left {
+  float: left;
+}
+
+.m_album-right {
+  float: right;
+}
+
+.m_center {
+  text-align: center;
+  font-size: medium;
+  margin: 20rpx;
+}
+
+.m_space {
+  height: 44px;
+  width: 100%;
+}
+
+.m_bottom {
+  width: 73%;
+  display: flex;
+  margin-right: 2%;
+  justify-content: space-between;
+}
+
+.m_bottom-type {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  bottom: 0;
+  height: 44px;
+  border-top: 1px solid #eeeeee;
+  background-color: white;
+}
+
+.m_bottom-style {
+  display: flex;
+  width: 90%;
+  font-size: small;
+  align-self: center;
+}
+
+.m_bottom-text-left {
+  align-self: center;
+  color: red;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+.m_bottom-text-right {
+  align-self: center;
+}
+
+.m_bottom-button {
+  width: 25%;
+  font-size:  small;
+  align-self: center;
+  color: white;
+  background-color: red;
+}
+
+.m_bottom-button.button-hover{
+  background-color: rgb(236, 0, 0);
+}
+
+.m_warning {
+  color: red;
+  text-align: center;
+  padding:5rpx 0;
+  font-weight: bold;
+  font-size: 26rpx;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(249, 255, 158, 1)
+}
+
+.m_message {
+  width: 100%;
+  font-size: medium;
+}
+
+.m_text {
+  width: 100%;
+  border:#ccc solid 1rpx;
+  height:135rpx;
+  margin-bottom:20rpx;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.m_text_1 {
+  width: 95%;
+  height: 120rpx;
+}
