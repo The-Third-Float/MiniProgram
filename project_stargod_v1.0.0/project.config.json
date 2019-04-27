@@ -1,0 +1,53 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": false
+	},
+	"appid": "wx72e7829213f74fd9",
+	"projectname": "project_stargod_v1.0.0",
+	"libVersion": "2.4.0",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "add",
+					"pathName": "pages/address/add",
+					"query": "app.globalData.id=XEml2t7E7L4wkYn9"
+				},
+				{
+					"id": -1,
+					"name": "add",
+					"pathName": "pages/address/address",
+					"query": "app.globalData.id=XEml2t7E7L4wkYn9"
+				}
+			]
+		}
+	}
+}
