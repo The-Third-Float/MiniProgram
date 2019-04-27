@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "新增收货地址",
+  "component": true,
+  "usingComponents": {
+    "van-button": "vant-weapp/button"
+  }
+}

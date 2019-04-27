@@ -1,0 +1,29 @@
+<!--pages/address/address.wxml-->
+<view class="m_address">
+  <radio-group bindchange="chooseAddress">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+
+      <view  class="m_radio">
+        <radio class="m_choose" value="{{item.id}}">
+          <view class = "m_info">
+            <text>{{item.name}} {{item.sex}}，{{item.tele}}</text>
+            <text>地址：{{item.region[1]}}{{item.region[2]}}{{item.address}}</text>
+          </view>
+        </radio>
+        <view class="m_item" bindtap="editAddress" 
+          data-id="{{item.id}}" 
+          data-name="{{item.name}}" 
+          data-tel="{{item.tele}}" 
+          data-region="{{item.region}}"
+          data-addre="{{item.address}}" 
+          data-sex="{{item.sex}}" 
+          data-tag="{{item.tag}}">
+          <image class="m_image" src="../../image/add_edit.png" mode = "aspectFill"></image>
+        </view>
+      </view>
+
+    </block>
+  </radio-group>
+
+  <van-button class="bottom-type" type="primary" bind:click="createAddress" block>新建个人地址</van-button>
+</view>

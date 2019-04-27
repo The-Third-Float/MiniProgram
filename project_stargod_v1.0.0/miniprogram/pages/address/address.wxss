@@ -1,0 +1,41 @@
+/* pages/address/address.wxss */
+.m_address {
+  font-size: medium;
+}
+
+
+.m_info {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+}
+
+.m_item {
+  /* background-color: plum; */
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.m_radio {
+  display: flex;
+  width: 92%;
+  padding: 30rpx;
+  justify-content: space-between;
+  align-items:center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.m_image {
+  height:100%;
+  width:100%;
+}
+
+.m_choose {
+  width: 100%;
+}
+
+.bottom-type{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

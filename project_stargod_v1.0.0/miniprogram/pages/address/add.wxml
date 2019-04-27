@@ -1,0 +1,105 @@
+<!--pages/address/add.wxml-->
+<view class="m_total-style">
+  <view class="m_address-total">
+    <view class="m_address-info">
+      <view class="m_info">
+        <view class="m_info-left">
+          收货地址:
+        </view>
+        <view class="m_info-right">
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <block wx:if="{{region[0]==0}}">
+              <view class="placeholder">
+                点击选择
+              </view>
+            </block>
+            <block wx:else>
+              <view>
+                {{region[0]}}-{{region[1]}}-{{region[2]}}
+              </view>
+            </block>
+          </picker>
+        </view>
+      </view>
+      <view class="m_info">
+        <view class="m_info-left">
+          门牌号:
+        </view>
+        <view class="m_info-right">
+          <input class="weui-input" 
+          placeholder-style="color:#aab2bd" 
+          maxlength="32" 
+          auto-focus placeholder="详细地址，例：10号楼3层301室"
+          value='{{user_add}}'
+          bindinput="addressChange"/>
+        </view>
+      </view>
+      <view class="m_info">
+        <view class="m_info-left">
+          联系人:
+        </view>
+        <view class="m_info-right">
+          <input class="weui-input" 
+          placeholder-style="color:#aab2bd" 
+          maxlength="32" 
+          auto-focus placeholder="请填写收货人的姓名"
+          value='{{user_nam}}'
+          bindinput="nameChange"/>
+        </view>
+      </view>
+      <view class="m_info">
+        <view class="m_info-left"></view>
+        <view class="m_info-right">
+          <radio-group bindchange="radioChange" class="m_checkbox">
+            <block wx:for="{{radioItems}}" wx:key="{{radioItems.value}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}">{{item.value}}</radio>
+            </block>
+          </radio-group>
+        </view>
+      </view>
+      <view class="m_info">
+        <view class="m_info-left">
+          手机号:
+        </view>
+        <view class="m_info-right">
+          <input class="weui-input" 
+          placeholder-style="color:#aab2bd" 
+          maxlength="20" 
+          type="number" 
+          placeholder="请填写收货手机号码" 
+          value='{{user_tel}}'
+          bindinput="telephoneChange"/>
+        </view>
+      </view>
+    </view>
+    <view class="m_target">
+      <view class="m_info-left">
+        标签:
+      </view>
+      <view class="m_info-right">
+        <radio-group class="group" bindchange="checkboxChange">
+          <view class="label-1" wx:for="{{checkboxItems}}" wx:key="{{checkboxItems.name}}">
+            <label>
+              <radio hidden value="{{item.name}}" checked="{{item.checked}}"></radio>
+              <view class="label-1__icon">
+                <view class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0}}">{{item.value}}</view>
+                {{item.value}}
+              </view>
+            </label>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{type == 'edit'}}">
+    <view class="m_type">
+      <view  class="m_item" bindtap="askForDeleteAddress">
+        <image class="m_image" src="../../image/add_dele.png" mode = "aspectFill"></image>
+      </view>
+    </view>
+  </block>
+
+  <van-button class="bottom-type" type="primary" bindtap="saveInfo" block>保存地址</van-button>
+
+</view>
